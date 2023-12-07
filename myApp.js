@@ -17,6 +17,16 @@ app.use(helmet.contentSecurityPolicy({
     }
   }
 ));
+app.use(helmet({
+  
+  contentSecurityPolicy:{
+    directives :{
+    defaultSrc:["'self'"],
+    scriptSrc:["'self'",'trusted-cdn.com']
+  }
+},
+noCache : true
+}))
 
 
 
